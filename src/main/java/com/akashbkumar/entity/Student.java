@@ -1,4 +1,4 @@
-package com.akashbkumar;
+package com.akashbkumar.entity;
 
 import com.akashbkumar.enums.Gender;
 import jakarta.persistence.*;
