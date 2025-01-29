@@ -20,10 +20,15 @@ public class StudentRepositoryImplementation implements StudentRepository
         {
             Transaction transaction = session.beginTransaction();
 
+
             // logic to save the object into the database.
             session.persist(student);
 
+
+
             transaction.commit();
+
+
         }
     }
 

@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 @Table(name = "student")
 public class Student
 {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
 
@@ -24,9 +25,8 @@ public class Student
 
     public Student(){}
 
-    public Student(int id, String name, String city, String email, Gender gender, int marks)
+    public Student(String name, String city, String email, Gender gender, int marks)
     {
-        this.id = id;
         this.name = name;
         this.city = city;
         this.email = email;
@@ -37,11 +37,6 @@ public class Student
     public int getId()
     {
         return id;
-    }
-
-    public void setId(int id)
-    {
-        this.id = id;
     }
 
     public int getMarks()
