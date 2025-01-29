@@ -9,9 +9,9 @@ import java.util.UUID;
 @Table(name = "student")
 public class Student
 {
-    @GeneratedValue(strategy = GenerationType.UUID)
+
     @Id
-    private UUID id;
+    private int id;
 
     @Column(nullable = false)
     private int marks;
@@ -36,7 +36,7 @@ public class Student
         this.marks = marks;
     }
 
-    public UUID getId()
+    public int getId()
     {
         return id;
     }

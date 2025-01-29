@@ -8,11 +8,11 @@ public interface StudentRepository
 {
     void saveStudent(Student student);
 
-    Student findStudent(UUID studentId);
+    Student findStudent(int studentId);
 
-    void updateStudent(UUID studentId, String studentName);
+    void updateStudent(int studentId, String studentName);
 
-    void deleteStudent(UUID studentId);
+    void deleteStudent(int studentId);
 
 
 }

@@ -29,7 +29,7 @@ public class StudentRepositoryImplementation implements StudentRepository
     }
 
     @Override
-    public Student findStudent(UUID studentId)
+    public Student findStudent(int studentId)
     {
         try (Session session = sessionFactory.openSession())
         {
@@ -38,7 +38,7 @@ public class StudentRepositoryImplementation implements StudentRepository
     }
 
     @Override
-    public void updateStudent(UUID studentId, String studentName)
+    public void updateStudent(int studentId, String studentName)
     {
         try(Session session = sessionFactory.openSession())
         {
@@ -51,7 +51,7 @@ public class StudentRepositoryImplementation implements StudentRepository
     }
 
     @Override
-    public void deleteStudent(UUID studentId) {
+    public void deleteStudent(int studentId) {
         try (Session session = sessionFactory.openSession())
         {
             Transaction transaction = session.beginTransaction();
