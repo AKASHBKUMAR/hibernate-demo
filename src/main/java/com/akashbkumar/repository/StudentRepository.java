@@ -2,15 +2,17 @@ package com.akashbkumar.repository;
 
 import com.akashbkumar.entity.Student;
 
+import java.util.UUID;
+
 public interface StudentRepository
 {
     void saveStudent(Student student);
 
-    Student findStudent(int studentId);
+    Student findStudent(UUID studentId);
 
-    void updateStudent(int studentId, String studentName);
+    void updateStudent(UUID studentId, String studentName);
 
-    void deleteStudent(int studentId);
+    void deleteStudent(UUID studentId);
 
 
 }

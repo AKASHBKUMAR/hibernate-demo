@@ -3,12 +3,15 @@ package com.akashbkumar.entity;
 import com.akashbkumar.enums.Gender;
 import jakarta.persistence.*;
 
+import java.util.UUID;
+
 @Entity
 @Table(name = "student")
 public class Student
 {
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Id
-    private int id;
+    private UUID id;
 
     @Column(nullable = false)
     private int marks;
@@ -24,9 +27,8 @@ public class Student
 
     public Student(){}
 
-    public Student(int id, String name, String city, String email, Gender gender, int marks)
+    public Student(String name, String city, String email, Gender gender, int marks)
     {
-        this.id = id;
         this.name = name;
         this.city = city;
         this.email = email;
@@ -34,15 +36,11 @@ public class Student
         this.marks = marks;
     }
 
-    public int getId()
+    public UUID getId()
     {
         return id;
     }
 
-    public void setId(int id)
-    {
-        this.id = id;
-    }
 
     public int getMarks()
     {

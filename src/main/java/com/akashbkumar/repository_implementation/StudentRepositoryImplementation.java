@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import javax.xml.crypto.Data;
+import java.util.UUID;
 
 public class StudentRepositoryImplementation implements StudentRepository
 {
@@ -28,7 +29,7 @@ public class StudentRepositoryImplementation implements StudentRepository
     }
 
     @Override
-    public Student findStudent(int studentId)
+    public Student findStudent(UUID studentId)
     {
         try (Session session = sessionFactory.openSession())
         {
@@ -37,7 +38,7 @@ public class StudentRepositoryImplementation implements StudentRepository
     }
 
     @Override
-    public void updateStudent(int studentId, String studentName)
+    public void updateStudent(UUID studentId, String studentName)
     {
         try(Session session = sessionFactory.openSession())
         {
@@ -50,7 +51,7 @@ public class StudentRepositoryImplementation implements StudentRepository
     }
 
     @Override
-    public void deleteStudent(int studentId) {
+    public void deleteStudent(UUID studentId) {
         try (Session session = sessionFactory.openSession())
         {
             Transaction transaction = session.beginTransaction();
